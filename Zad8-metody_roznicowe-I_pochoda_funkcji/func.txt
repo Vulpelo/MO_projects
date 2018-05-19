@@ -1,0 +1,10 @@
+set ylabel "log|b³êdu|"
+set xlabel "log h"
+set logscale xy
+plot 'dane.dat' using 1:2 title "PtP-F" w linespoints, \
+'dane.dat' using 1:3 title "PtP - F3p" w linespoints, \
+'dane.dat' using 1:4 title "PtS - F" w linespoints, \
+'dane.dat' using 1:5 title "PtS - C" w linespoints, \
+'dane.dat' using 1:6 title "PtS - B" w linespoints, \
+'dane.dat' using 1:6 title "PtK - B" w linespoints, \
+'dane.dat' using 1:7 title "PtK - B3p" w linespoints

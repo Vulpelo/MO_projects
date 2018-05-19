@@ -1,0 +1,5 @@
+set ylabel "log|b³êdu|"
+set xlabel "log h"
+set logscale xy
+plot 'error.dat' title "konwecjonalna" w linespoints, \
+'errorNumera.dat' title "numerowa" w linespoints

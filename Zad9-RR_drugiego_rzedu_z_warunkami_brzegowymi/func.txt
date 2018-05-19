@@ -1,0 +1,5 @@
+unset logscale xy
+set ylabel "y"
+set xlabel "x"
+plot 'dane.dat' title "Funkcja z³o¿ona z wyliczynych punktów" w lines, \
+'danePrawdziwe.dat' title "Funkcja prawdziwa" w lines
