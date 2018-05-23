@@ -1,3 +1,0 @@
-plot 'daneMBE' w lines, \
-'daneAalityczna.dat' w lines, \
-'daneMPE' w lines

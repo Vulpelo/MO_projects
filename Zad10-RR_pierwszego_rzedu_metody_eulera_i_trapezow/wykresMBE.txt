@@ -1,0 +1,5 @@
+set xlabel "t"
+set ylabel "y"
+unset logscale xy
+plot 'daneAalityczna.dat' title "Funkcja analityczna" w lines, \
+'daneMBE' title "Metoda Bezpoœrednia Eulera" w points

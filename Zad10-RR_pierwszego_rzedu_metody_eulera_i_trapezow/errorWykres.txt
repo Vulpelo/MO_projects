@@ -1,0 +1,6 @@
+set xlabel "log (delta t)" 
+set ylabel "log(b³êdu)"
+set logscale xy
+plot 'errorDaneMBE' w lines, \
+'errorDaneMPE' w lines, \
+'errorDaneMT' w lines
