@@ -1,0 +1,5 @@
+set xlabel "t"
+set ylabel "y"
+unset logscale xy
+plot 'daneMBE-NS' title "Metoda bezpoœrednia Eulera -NIESTABILNE" w lines,\
+'daneAalityczna.dat' w lines

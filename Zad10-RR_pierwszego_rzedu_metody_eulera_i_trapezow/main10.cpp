@@ -67,14 +67,12 @@ void metodaBezposredniaEuleraNIESTABILNY(double h, double toNumber) {
 	double y = 0;
 	double t = 0;
 
-	double g = 1 + (-10 *t*t - 20) / (t*t + 1) * h;
-	//double g = 1 + (-10 * (t*t + 2)) / ((t*t + 1)*(t*t + 1)) * h;
+	double g = 1 - (10 *(t*t + 2)) / (t*t + 1) * h;
 	for (t = 0; t < toNumber; t += h) {
 		y = y - (10 * t*t + 20) / (t*t + 1)*(y - 1)*h;
 		fprintf(wyj, "%.5e %.5e\n", t, y);
-		g = 1 + (-10 * t*t - 20) / (t*t + 1) * h;
-		// g = 1 + (-10 * (t*t + 2)) / ((t*t + 1)*(t*t + 1)) * h;
-		std::cout << g << std::endl;
+		g = 1 - (10 * t*t + 20) / (t*t + 1) * h;
+		std::cout << g << " " << y << std::endl;
 	}
 
 	fclose(wyj);
@@ -155,8 +153,8 @@ void metodaTrapezow(double h, double toNumber) {
 			yk1 = (10 * (t + nH)*(t + nH) + 20) / ((t + nH)*(t + nH) + 1) * nH;
 			y = (-y * yk + yk + yk1 + 2 * y) / (2 + yk1);
 
-			if (maxError < fabs(y - funAnalityczna(t))) {
-				maxError = fabs(y - funAnalityczna(t));
+			if (maxError < fabs(funAnalityczna(t1) - y)) {
+				maxError = fabs(funAnalityczna(t1) - y);
 			}
 		}
 		fprintf(errorWyj, "%.5e %.5e\n", nH, maxError);
@@ -166,7 +164,7 @@ void metodaTrapezow(double h, double toNumber) {
 		}
 		else if (i == 4)
 		{
-			printf("MT: %.5e", fabs((log10(maxError) - log10(tmpError)) / (log10(nH) - log10(tmpH))));
+			printf("MT: %.5e", fabs((log10(tmpError) - log10(maxError)) / (log10(tmpH) - log10(nH))));
 		}
 	}
 
@@ -180,7 +178,7 @@ int main()
 	double to = 0.5;
 	wykFuncAnalitycznej(to);
 	metodaBezposredniaEulera(stepH, to);
-	//metodaBezposredniaEuleraNIESTABILNY(0.1, 2.);
+	// metodaBezposredniaEuleraNIESTABILNY(0.1, 2.);
 
 	metodaPosredniaEulera(stepH, to);
 	metodaTrapezow(stepH, to);
