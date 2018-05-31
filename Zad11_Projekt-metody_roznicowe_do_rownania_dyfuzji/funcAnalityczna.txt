@@ -1,0 +1,2 @@
+set title "Funkcja dla D=1"
+plot 'dataProperFunc.dat' title "Funkcja analityczna" w lines

@@ -1,0 +1,3 @@
+# plot for [i=2:20] 'dataFuncKMB.dat' using (i-1):(column(i)) with linespoint
+# plot 'data.txt' matrix using 1:0 with linespoint
+plot 'dataFuncKMB.dat' matrix using 1:3 w lines
